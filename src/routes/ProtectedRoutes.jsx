@@ -10,7 +10,7 @@ import ChangePassword from 'src/views/Profile/ChangePassword';
 import Dashboard from 'src/views/Dashboard';
 import InterviewCall from 'src/views/InterviewCall';
 import PrivateGuard from 'src/utils/guards/PrivateGuard';
-import Organization from 'src/views/Organization';
+import Organization from '@/views/Organization';
 import InterviewerVoiceList from 'src/views/Interviewers/InterviewerVoiceList';
 import CreateInterviewer from 'src/views/Interviewers/CreateInterviewer';
 import UserManagement from 'src/views/UserManagement';

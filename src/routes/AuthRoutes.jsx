@@ -1,4 +1,5 @@
 import Vendor from "@/views/Vendor";
+import Organization from "@/views/Organization";
 
 
 const AuthRoutes = {
@@ -8,6 +9,11 @@ const AuthRoutes = {
       path: "vendor",
       element: <Vendor />,
     },
+    {
+      path: "organization",
+      element: <Organization />,
+    },
   ],
 };
+
 export default AuthRoutes;

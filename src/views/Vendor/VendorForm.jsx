@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useForm, Controller } from 'react-hook-form';
-import InputField from 'src/utils/components/ui/InputField';
-import Button from 'src/utils/components/ui/Button';
+import InputField from '@/utils/components/ui/InputField';
+import Button from '@/utils/components/ui/Button';
 // import { FiChevronDown, FiCheck } from 'react-icons/fi';
 // import * as Select from '@radix-ui/react-select';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { RotatingLines } from 'react-loader-spinner';
 // import { yupResolver } from '@hookform/resolvers/yup';
 // import * as yup from 'yup';
-import { VendorByIdApi, VendorUpsertApi } from 'src/api/VendorApi';
+import { VendorByIdApi, VendorUpsertApi } from '@/api/VendorApi';
 
 // ------------------------- VALIDATION ------------------------
 // const ValidationSchema = yup.object({
@@ -150,6 +150,23 @@ const VendorForm = ({ onClose, VendorId }) => {
                             )}
                         />
                         {/* {errors.last_name && <p className="text-xs text-red-500 mt-1">{errors.last_name.message}</p>} */}
+                    </div>
+                    <div>
+                        <label className="block text-xs font-semibold text-gray-600 mb-1">
+                            Organization <span className="text-red-500">*</span>
+                        </label>
+                        <Controller
+                            name="organization_name"
+                            control={control}
+                            render={({ field }) => (
+                                <InputField
+                                    {...field}
+                                    // placeholder="98765 43210"
+                                    // error={!!errors.phone_no}
+                                />
+                            )}
+                        />
+                        {/* {errors.phone_no && <p className="text-xs text-red-500 mt-1">{errors.phone_no.message}</p>} */}
                     </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -1,22 +1,20 @@
 import { Fragment, useState } from "react";
-import * as Select from "@radix-ui/react-select";
 import { FiChevronDown, FiCheck, FiEdit, FiTrash2 } from "react-icons/fi";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { RotatingLines } from "react-loader-spinner";
-
 import Button from "@/utils/components/ui/Button";
 import Alert from "@/utils/components/ui/Alert";
 import Model from "@/utils/components/Model";
 import DeleteAlertDialog from "@/utils/components/ui/DeleteAlertDialog";
 import { VendorDeleteApi, VendorListApi } from "@/api/VendorApi";
 import InputField from "@/utils/components/ui/InputField";
-// import VendorForm from './VendorForm';
+import VendorForm from "./VendorForm";
 
 const Vendor = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterRole, setFilterRole] = useState("all");
-  const [filterStatus, setFilterStatus] = useState("all");
+  // const [filterRole, setFilterRole] = useState("all");
+  // const [filterStatus, setFilterStatus] = useState("all");
   const [orderColumn, setOrderColumn] = useState("name");
   const [orderDirection, setOrderDirection] = useState("ASC");
   const [showFormModal, setShowFormModal] = useState(null);
@@ -29,8 +27,8 @@ const Vendor = () => {
       "vendors",
       currentPage,
       searchTerm,
-      filterRole,
-      filterStatus,
+      // filterRole,
+      // filterStatus,
       orderColumn,
       orderDirection,
     ],
@@ -41,7 +39,7 @@ const Vendor = () => {
         length: itemsPerPage,
         orderColumn: orderColumn,
         orderDirection: orderDirection,
-        is_active: filterStatus === "all" ? null : filterStatus === "active",
+        // is_active: filterStatus === "all" ? null : filterStatus === "active",
       }),
     keepPreviousData: true,
   });
@@ -89,10 +87,10 @@ const Vendor = () => {
           </div>
 
           <div className="flex flex-col-reverse gap-2 w-full sm:flex-row sm:items-center sm:justify-end md:w-auto">
-            <span className="inline-flex items-center justify-center sm:justify-start rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+            {/* <span className="inline-flex items-center justify-center sm:justify-start rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
               <span className="mr-2 h-2 w-2 rounded-full bg-emerald-500" />
               {totalCount} total vendors
-            </span>
+            </span> */}
 
             <Button
               variant="contained"
@@ -138,7 +136,7 @@ const Vendor = () => {
               </div>
             </div>
 
-            <div className="w-full sm:w-48">
+            {/* <div className="w-full sm:w-48">
               <label className="block text-xs font-semibold text-gray-500 mb-1">
                 Role
               </label>
@@ -207,9 +205,9 @@ const Vendor = () => {
                   </Select.Content>
                 </Select.Portal>
               </Select.Root>
-            </div>
+            </div> */}
 
-            <div className="w-full sm:w-48">
+            {/* <div className="w-full sm:w-48">
               <label className="block text-xs font-semibold text-gray-500 mb-1">
                 Status
               </label>
@@ -269,10 +267,10 @@ const Vendor = () => {
                   </Select.Content>
                 </Select.Portal>
               </Select.Root>
-            </div>
+            </div> */}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          {/* <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <p className="text-xs text-gray-500">
               Tip: Click on <b>Name</b>, <b>Email</b> or <b>Created</b> to sort.
             </p>
@@ -284,7 +282,7 @@ const Vendor = () => {
                   : "Created"}{" "}
               • {orderDirection === "ASC" ? "ASC" : "DESC"}
             </span>
-          </div>
+          </div> */}
         </div>
 
         {/* Error */}
@@ -327,6 +325,8 @@ const Vendor = () => {
                       (orderDirection === "ASC" ? "↑" : "↓")}
                   </th>
                   <th className="p-3 text-left font-semibold">Service Type</th>
+                  <th className="p-3 text-left font-semibold">Organization</th>
+                  <th className="p-3 text-left font-semibold">Phone</th>
                   <th className="p-3 text-left font-semibold">Status</th>
                   <th
                     onClick={() => {
@@ -372,6 +372,12 @@ const Vendor = () => {
                       <td className="p-3 text-gray-600">{vendor.email}</td>
                       <td className="p-3 text-gray-600">
                         {vendor.service_type}
+                      </td>
+                      <td className="p-3 text-gray-600">
+                        {vendor.organization_name}
+                      </td>                     
+                       <td className="p-3 text-gray-600">
+                        {vendor.phone}
                       </td>
                       <td className="p-3">
                         <span
@@ -472,7 +478,7 @@ const Vendor = () => {
           }
           onClose={() => setShowFormModal(null)}
         >
-          {/* <VendorForm onClose={() => setShowFormModal(null)} VendorId={showFormModal?.vendor_id} /> */}
+          <VendorForm  onClose={() => setShowFormModal(null)} VendorId={showFormModal?.vendor_id} />
         </Model>
       )}
 

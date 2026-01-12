@@ -29,3 +29,6 @@ export const VerifyEmailApi = async (data) => {
 export const Vendor = async (data) => {
     return await ApiService.post('/Auth/vendor', data, { authorization: false });
 };
+export const Organization = async (data) => {
+    return await ApiService.post('/Auth/Organization', data, { authorization: false });
+};
