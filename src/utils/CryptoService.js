@@ -52,6 +52,6 @@ export function decryptData(encryptedPayload, secretKey) {
         }
     } catch (err) {
         console.error('Decrypt error:', err);
-        throw new Error('Failed to decrypt. Possibly wrong key, corrupted payload, or wrong algorithm.');
+        // throw new Error('Failed to decrypt. Possibly wrong key, corrupted payload, or wrong algorithm.');
     }
 }

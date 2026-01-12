@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
-import { getThemeMode } from '@/utils/Utils';
 import PropTypes from 'prop-types';
+import { getThemeMode } from '@/utils/Utils';
 
 const ThemeContext = createContext(null);
 

@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useForm, Controller } from 'react-hook-form';
-import InputField from '@/utils/components/ui/InputField';
-import Button from '@/utils/components/ui/Button';
+import InputField from 'src/utils/components/ui/InputField';
+import Button from 'src/utils/components/ui/Button';
 // import { FiChevronDown, FiCheck } from 'react-icons/fi';
 // import * as Select from '@radix-ui/react-select';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { RotatingLines } from 'react-loader-spinner';
 // import { yupResolver } from '@hookform/resolvers/yup';
 // import * as yup from 'yup';
-import { VendorByIdApi, VendorUpsertApi } from '@/api/VendorApi';
+import { VendorByIdApi, VendorUpsertApi } from 'src/api/VendorApi';
 
 // ------------------------- VALIDATION ------------------------
 // const ValidationSchema = yup.object({

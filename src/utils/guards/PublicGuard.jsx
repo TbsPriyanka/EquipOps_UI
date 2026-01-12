@@ -1,5 +1,5 @@
-import useAuth from '@/hooks/useAuth';
-import { clearUser } from '@/store/userSlice';
+import useAuth from 'src/hooks/useAuth';
+import { clearUser } from 'src/store/userSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';

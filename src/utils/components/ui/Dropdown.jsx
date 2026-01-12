@@ -1,4 +1,4 @@
-import { cn } from '@/utils/Utils';
+import { cn } from 'src/utils/Utils';
 import { cva } from 'class-variance-authority';
 import PropTypes from 'prop-types';
 

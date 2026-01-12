@@ -31,7 +31,7 @@ export const SideList = [
     { title: 'User Management', value: 'user-management', Icon: LuUserCog },
     { title: 'Language', value: 'language', Icon: LuLanguages },
     { title: 'Setting', value: 'setting', Icon: LuSettings },
-    { title: 'Vendor Copy', value: 'vendor-copy', Icon: LuUserCog }
+    { title: 'Vendor', value: 'vendor', Icon: LuUserCog }
     // { title: 'Profile', value: 'profile', Icon: LuUser },
     // { title: 'Logout', value: 'login', Icon: LuLogOut }
 ];

@@ -1,5 +1,5 @@
-import store from '@/store';
-import { clearUser } from '@/store/userSlice';
+// import store from '@/store';
+// import { clearUser } from '@/store/userSlice';
 import axios from 'axios';
 import cookie from 'react-cookies';
 const env = import.meta.env;
@@ -29,7 +29,7 @@ axiosInstance.interceptors.response.use(
     (response) => response,
     (error) => {
         if (error.response && error.response.status === 401) {
-            store.dispatch(clearUser());
+            // store.dispatch(clearUser());
         }
 
         return Promise.reject(error);

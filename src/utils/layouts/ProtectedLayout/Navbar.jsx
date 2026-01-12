@@ -4,15 +4,15 @@ import { HiMenuAlt1 } from 'react-icons/hi';
 import { IoNotificationsOutline } from 'react-icons/io5';
 import DefaultAvatar from '/avatar.png';
 import PropTypes from 'prop-types';
-// import useTheme from '@/hooks/useTheme';
+// import useTheme from 'src/hooks/useTheme';
 import { useLocation, useNavigate } from 'react-router';
-import { SideList } from '@/utils/CommonList';
-import Popover from '@/utils/components/ui/Popover';
+import { SideList } from 'src/utils/CommonList';
+import Popover from 'src/utils/components/ui/Popover';
 import { useMutation } from '@tanstack/react-query';
-import { LogoutApi } from '@/api/AuthApi';
+import { LogoutApi } from 'src/api/AuthApi';
 import { useDispatch } from 'react-redux';
-import { clearUser } from '@/store/userSlice';
-import useAuth from '@/hooks/useAuth';
+import { clearUser } from 'src/store/userSlice';
+import useAuth from 'src/hooks/useAuth';
 
 const Navbar = ({ toggleSidebar }) => {
     const navigate = useNavigate();

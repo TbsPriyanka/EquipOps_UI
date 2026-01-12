@@ -1,4 +1,4 @@
-import useAuth from '@/hooks/useAuth';
+import useAuth from 'src/hooks/useAuth';
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import PropTypes from 'prop-types';

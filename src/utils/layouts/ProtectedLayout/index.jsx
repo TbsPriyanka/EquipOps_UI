@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-import { cn, detectIsMobile } from '@/utils/Utils';
+import { detectIsMobile } from 'src/utils/Utils';
+// import { cn, detectIsMobile } from 'src/utils/Utils';
 
 const ProtectedLayout = () => {
     const [open, setOpen] = useState(!detectIsMobile());

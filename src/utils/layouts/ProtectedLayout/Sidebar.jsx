@@ -1,5 +1,5 @@
-import { SideList } from '@/utils/CommonList';
-import { cn } from '@/utils/Utils';
+import { SideList } from 'src/utils/CommonList';
+import { cn } from 'src/utils/Utils';
 import PropTypes from 'prop-types';
 import { NavLink, useLocation } from 'react-router';
 
